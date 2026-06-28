@@ -1,0 +1,9 @@
+audio-transcribe-frontend/node_modules
+audio-transcribe-frontend/dist
+audio-transcribe/target/
+audio-transcribe/.idea/
+audio-transcribe/*.iml
+.env
+*.env
+.DS_Store
+*.log

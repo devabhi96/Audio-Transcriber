@@ -1,0 +1,175 @@
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: radial-gradient(circle at 20% 20%, #2d1b4e 0%, transparent 50%),
+              radial-gradient(circle at 80% 0%, #1b3a4e 0%, transparent 50%),
+              radial-gradient(circle at 50% 100%, #4e1b3a 0%, transparent 50%),
+              #0a0b0f;
+  color: #f4f3f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+#root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 480px;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 40px 36px;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  text-align: center;
+}
+
+.container h1 {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0 0 6px;
+  letter-spacing: -0.3px;
+  background: linear-gradient(135deg, #fff 0%, #b8a9ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.container h1::after {
+  content: "Drop in audio, get clean text.";
+  display: block;
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(244, 243, 247, 0.45);
+  background: none;
+  -webkit-background-clip: unset;
+  background-clip: unset;
+  -webkit-text-fill-color: rgba(244, 243, 247, 0.45);
+  margin-top: 8px;
+}
+
+.file-input {
+  margin: 28px 0 18px;
+  padding: 22px;
+  border: 1.5px dashed rgba(255, 255, 255, 0.15);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.02);
+  transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+.file-input:hover {
+  border-color: rgba(167, 139, 250, 0.5);
+  background: rgba(167, 139, 250, 0.06);
+}
+
+.file-input input[type="file"] {
+  width: 100%;
+  color: rgba(244, 243, 247, 0.55);
+  font-size: 13.5px;
+}
+
+.file-input input[type="file"]::file-selector-button {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 8px 16px;
+  border-radius: 8px;
+  margin-right: 12px;
+  cursor: pointer;
+  font-size: 12.5px;
+  font-weight: 600;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.file-input input[type="file"]::file-selector-button:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.upload-button {
+  width: 100%;
+  padding: 13px 20px;
+  font-size: 14.5px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  color: #fff;
+  background: linear-gradient(135deg, #7c5cff 0%, #ad6cff 100%);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(124, 92, 255, 0.35);
+  transition: transform 0.15s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.upload-button:hover {
+  filter: brightness(1.08);
+  box-shadow: 0 10px 28px rgba(124, 92, 255, 0.5);
+}
+
+.upload-button:active {
+  transform: scale(0.98);
+}
+
+.transcription-result {
+  margin-top: 24px;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 14px;
+  padding: 18px 20px;
+  min-height: 70px;
+}
+
+.transcription-result h2 {
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(244, 243, 247, 0.4);
+  margin: 0 0 10px;
+}
+
+.transcription-result p {
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: rgba(244, 243, 247, 0.9);
+  margin: 0;
+  word-break: break-word;
+  white-space: pre-wrap;
+}
+
+.transcription-result p:empty::before {
+  content: "Your transcription will appear here.";
+  color: rgba(244, 243, 247, 0.3);
+  font-style: italic;
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 28px 22px;
+    border-radius: 16px;
+  }
+  .container h1 {
+    font-size: 19px;
+  }
+}
